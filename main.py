@@ -87,11 +87,15 @@ def process_transcript(payload: TranscriptIn):
             slots.get("severity", "medium"),
         )
 
-        # Step 6: Build document
+        # Step 6: Translate summaries back to original language if needed
+        summary_out = translator.translate_back(short_summary, language) if language != "en" else short_summary
+        final_summary_out = translator.translate_back(final_summary_text, language) if language != "en" else final_summary_text
+
+        # Step 7: Build document
         doc = {
             "department": slots.get("department", INTENT_TO_DEPT.get(intent, "General")),
             "intent": intent,
-            "summary": short_summary,
+            "summary": summary_out,
             "severity": slots.get("severity", "medium"),
             "location": slots.get("location"),
             "name": slots.get("name"),
@@ -99,16 +103,16 @@ def process_transcript(payload: TranscriptIn):
             "language": language,
             "confidence_score": final_conf,
             "missing_fields": slots.get("missing_fields", []),
-            "final_summary": final_summary_text,
+            "final_summary": final_summary_out,
             "raw_transcript": raw,
             "translated_text": translated if language != "en" else None,
         }
 
-        # Step 7: Handle low confidence + missing fields
+        # Step 8: Handle low confidence + missing fields
         if final_conf < CONFIDENCE_THRESHOLD and doc["missing_fields"]:
             logger.info("Low confidence & missing fields -> returning doc with clarification needed.")
 
-        # Step 8: Insert into DB
+        # Step 9: Insert into DB
         try:
             inserted_id = insert_complaint(doc)
             doc["_id"] = str(inserted_id)
@@ -148,10 +152,14 @@ def process_multiple_transcripts(json_list: list = Body(...)):
             slots.get("severity", "medium"),
         )
 
+        # Translate summaries back to original language if needed
+        summary_out = translator.translate_back(short_summary, language) if language != "en" else short_summary
+        final_summary_out = translator.translate_back(final_summary_text, language) if language != "en" else final_summary_text
+
         doc = {
             "department": slots.get("department", INTENT_TO_DEPT.get(intent, "General")),
             "intent": intent,
-            "summary": short_summary,
+            "summary": summary_out,
             "severity": slots.get("severity", "medium"),
             "location": slots.get("location"),
             "name": slots.get("name"),
@@ -159,7 +167,7 @@ def process_multiple_transcripts(json_list: list = Body(...)):
             "language": language,
             "confidence_score": final_conf,
             "missing_fields": slots.get("missing_fields", []),
-            "final_summary": final_summary_text,
+            "final_summary": final_summary_out,
             "raw_transcript": cleaned,
             "translated_text": translated if language != "en" else None,
         }

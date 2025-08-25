@@ -1,14 +1,16 @@
-# models/translator.py
+import requests
 from langdetect import detect, DetectorFactory
-from deep_translator import GoogleTranslator
 from utils.logger import get_logger
 
 DetectorFactory.seed = 0
 logger = get_logger()
 
+GEMINI_API_KEY = "AIzaSyDcp0X3yeLFxEu6F-hfqIQ8W9IEc6xSbxM"
+GEMINI_TRANSLATE_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
+
 class Translator:
-    def __init__(self, target_lang="en"):
-        self.target_lang = target_lang
+    def __init__(self, default_target_lang="en"):
+        self.default_target_lang = default_target_lang
 
     def detect_language(self, text: str) -> str:
         try:
@@ -18,23 +20,34 @@ class Translator:
             logger.warning(f"Language detection failed: {e}")
             return "unknown"
 
-    def translate(self, text: str, src_lang: str) -> str:
-        """
-        Translate to English for pipeline processing if not already English.
-        Falls back to original text on failure.
-        """
-        if not text:
-            return ""
-        if src_lang and src_lang.startswith("en"):
-            return text
+    def gemini_translate(self, text: str, target_lang: str) -> str:
+        headers = {"Content-Type": "application/json"}
+        payload = {
+            "contents": [
+                {
+                    "parts": [
+                        {"text": f"Translate this to {target_lang}: {text}"}
+                    ]
+                }
+            ]
+        }
+        params = {"key": GEMINI_API_KEY}
         try:
-            translated = GoogleTranslator(source=src_lang, target=self.target_lang).translate(text)
+            response = requests.post(GEMINI_TRANSLATE_URL, json=payload, params=params, headers=headers)
+            response.raise_for_status()
+            result = response.json()
+            translated = result["candidates"][0]["content"]["parts"][0]["text"]
             return translated
         except Exception as e:
-            logger.warning(f"Translation failed: {e} — returning original text")
+            logger.warning(f"Gemini translation failed: {e}")
             return text
 
     def detect_and_translate(self, text: str):
         lang = self.detect_language(text)
-        en = self.translate(text, lang)
-        return lang, en
+        translated = self.gemini_translate(text, "English") if lang != "en" else text
+        return lang, translated
+
+    def translate_back(self, text: str, original_lang: str) -> str:
+        if original_lang == "en":
+            return text
+        return self.gemini_translate(text, original_lang)
