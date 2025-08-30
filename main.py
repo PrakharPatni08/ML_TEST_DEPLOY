@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, HTTPException, Body
 from pydantic import BaseModel
 from typing import Optional, List, Dict, Any
@@ -186,3 +187,8 @@ def process_multiple_transcripts(json_list: list = Body(...)):
     except Exception as exc:
         logger.error(f"Error processing multiple transcripts: {exc}")
         raise HTTPException(status_code=500, detail=str(exc))
+    
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)

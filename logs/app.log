@@ -248,3 +248,87 @@
 2025-08-25 04:37:37,210 - INFO - Extracted slots -> dept: General, location: Sudama Nagar, severity: Medium, name: Swara, date: 2025-08-25, complaint_id: None, missing: []
 2025-08-25 04:37:56,058 - INFO - Intent classified as GetStatus with confidence 0.18
 2025-08-25 04:37:56,117 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: None, date: 2025-08-25, complaint_id: None, missing: ['location', 'name', 'complaint_id']
+2025-08-28 14:11:01,369 - INFO - Zero-shot intent classifier loaded successfully.
+2025-08-28 14:18:59,490 - INFO - Zero-shot intent classifier loaded successfully.
+2025-08-28 14:20:04,168 - INFO - Zero-shot intent classifier loaded successfully.
+2025-08-28 14:20:10,886 - INFO - Summarizer model loaded successfully.
+2025-08-28 14:20:32,460 - INFO - Intent classified as GetStatus with confidence 0.21
+2025-08-28 14:20:32,516 - INFO - Extracted slots -> dept: General, location: Swara, severity: Low, name: None, date: 2025-08-28, complaint_id: None, missing: ['name', 'complaint_id']
+2025-08-28 14:20:48,495 - INFO - Intent classified as Thanks with confidence 0.39
+2025-08-28 14:20:48,531 - INFO - Extracted slots -> dept: General, location: Sudama Nagar, severity: Medium, name: Swara, date: 2025-08-28, complaint_id: None, missing: []
+2025-08-29 16:16:02,257 - INFO - Zero-shot intent classifier loaded successfully.
+2025-08-29 16:17:23,836 - INFO - Summarizer model loaded successfully.
+2025-08-30 14:44:02,125 - INFO - Zero-shot intent classifier loaded successfully.
+2025-08-30 14:44:17,117 - INFO - Summarizer model loaded successfully.
+2025-08-30 14:51:46,334 - INFO - Zero-shot intent classifier loaded successfully.
+2025-08-30 14:51:52,249 - INFO - Summarizer model loaded successfully.
+2025-08-30 14:52:14,622 - INFO - Intent classified as GetStatus with confidence 0.21
+2025-08-30 14:52:14,678 - INFO - Extracted slots -> dept: General, location: Swara, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['name', 'complaint_id']
+2025-08-30 14:52:34,472 - INFO - Intent classified as Thanks with confidence 0.39
+2025-08-30 14:52:34,512 - INFO - Extracted slots -> dept: General, location: Sudama Nagar, severity: Medium, name: Swara, date: 2025-08-30, complaint_id: None, missing: []
+2025-08-30 14:52:48,634 - INFO - Intent classified as GetStatus with confidence 0.18
+2025-08-30 14:52:48,647 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['location', 'name', 'complaint_id']
+2025-08-30 14:53:02,846 - INFO - Intent classified as Water Supply with confidence 0.46
+2025-08-30 14:53:02,861 - INFO - Extracted slots -> dept: Water Department, location: Sudama Nagar, severity: Low, name: Sudama Nagar, date: 2025-08-30, complaint_id: None, missing: []
+2025-08-30 14:53:13,387 - INFO - Intent classified as ComplaintHistory with confidence 0.16
+2025-08-30 14:53:13,397 - INFO - Extracted slots -> dept: General, location: Khajrana, severity: Low, name: Swara, date: 2025-08-30, complaint_id: None, missing: []
+2025-08-30 14:53:23,925 - INFO - Intent classified as Water Supply with confidence 0.39
+2025-08-30 14:53:23,936 - INFO - Extracted slots -> dept: Water Department, location: Sudama Nagar, severity: Low, name: Sudama Nagar, date: 2025-08-30, complaint_id: None, missing: []
+2025-08-30 14:53:33,372 - INFO - Intent classified as Other with confidence 0.34
+2025-08-30 14:53:33,381 - INFO - Extracted slots -> dept: General, location: Hindi, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['name']
+2025-08-30 14:53:42,739 - INFO - Intent classified as Water Supply with confidence 0.28
+2025-08-30 14:53:42,746 - INFO - Extracted slots -> dept: Water Department, location: Sudama Nagar, severity: Low, name: Sudama Nagar, date: 2025-08-30, complaint_id: None, missing: []
+2025-08-30 14:53:51,843 - INFO - Intent classified as Other with confidence 0.20
+2025-08-30 14:53:51,851 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['location', 'name']
+2025-08-30 14:54:00,701 - INFO - Intent classified as Other with confidence 0.25
+2025-08-30 14:54:00,711 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: Swara, date: 2025-08-30, complaint_id: None, missing: ['location']
+2025-08-30 14:54:09,769 - INFO - Intent classified as GetStatus with confidence 0.16
+2025-08-30 14:54:09,776 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: Swara, date: 2025-08-30, complaint_id: None, missing: ['location', 'complaint_id']
+2025-08-30 14:54:19,323 - INFO - Intent classified as Greetings with confidence 0.20
+2025-08-30 14:54:19,334 - INFO - Extracted slots -> dept: General, location: Hindi, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['name']
+2025-08-30 14:54:29,470 - INFO - Intent classified as Other with confidence 0.24
+2025-08-30 14:54:29,479 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: Swara, date: 2025-08-30, complaint_id: None, missing: ['location']
+2025-08-30 14:54:39,652 - INFO - Intent classified as Other with confidence 0.44
+2025-08-30 14:54:39,662 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: Hindi, date: 2025-08-30, complaint_id: None, missing: ['location']
+2025-08-30 14:54:52,652 - INFO - Intent classified as Electricity with confidence 0.55
+2025-08-30 14:54:52,680 - INFO - Extracted slots -> dept: Electrical, location: Bijalpur, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['name']
+2025-08-30 14:55:05,833 - INFO - Intent classified as GetStatus with confidence 0.14
+2025-08-30 14:55:05,843 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: Harsh, date: 2025-08-30, complaint_id: None, missing: ['location', 'complaint_id']
+2025-08-30 14:55:17,588 - INFO - Intent classified as Electricity with confidence 0.44
+2025-08-30 14:55:17,596 - INFO - Extracted slots -> dept: Electrical, location: None, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['location', 'name']
+2025-08-30 14:55:28,980 - INFO - Intent classified as Road with confidence 0.22
+2025-08-30 14:55:28,989 - INFO - Extracted slots -> dept: Public Works, location: None, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['location', 'name']
+2025-08-30 14:55:42,773 - INFO - Intent classified as Electricity with confidence 0.46
+2025-08-30 14:55:42,785 - INFO - Extracted slots -> dept: Electrical, location: None, severity: Low, name: Prakhar Patni, date: 2025-08-30, complaint_id: None, missing: ['location']
+2025-08-30 14:55:53,329 - INFO - Intent classified as Other with confidence 0.21
+2025-08-30 14:55:53,340 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['location', 'name']
+2025-08-30 14:56:04,668 - INFO - Intent classified as Electricity with confidence 0.40
+2025-08-30 14:56:04,680 - INFO - Extracted slots -> dept: Electrical, location: Khajrana, severity: Low, name: Khajrana, date: 2025-08-30, complaint_id: None, missing: []
+2025-08-30 14:56:15,827 - INFO - Intent classified as Electricity with confidence 0.32
+2025-08-30 14:56:15,842 - INFO - Extracted slots -> dept: Electrical, location: None, severity: Low, name: Male Chaudhary, date: 2025-08-30, complaint_id: None, missing: ['location']
+2025-08-30 14:56:26,307 - INFO - Intent classified as Other with confidence 0.19
+2025-08-30 14:56:26,317 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['location', 'name']
+2025-08-30 14:56:37,816 - INFO - Intent classified as Other with confidence 0.27
+2025-08-30 14:56:37,827 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: Swara, date: 2025-08-30, complaint_id: None, missing: ['location']
+2025-08-30 14:56:52,475 - INFO - Intent classified as Water Supply with confidence 0.28
+2025-08-30 14:56:52,488 - INFO - Extracted slots -> dept: Water Department, location: Sudama Nagar, severity: Low, name: Sudama Nagar, date: 2025-08-30, complaint_id: None, missing: []
+2025-08-30 14:57:05,690 - INFO - Intent classified as Electricity with confidence 0.17
+2025-08-30 14:57:05,705 - INFO - Extracted slots -> dept: Electrical, location: Sudama Nagar, severity: Medium, name: Nikunj Maltare, date: 2025-08-30, complaint_id: None, missing: []
+2025-08-30 14:57:19,732 - INFO - Intent classified as ComplaintHistory with confidence 0.16
+2025-08-30 14:57:19,744 - INFO - Extracted slots -> dept: General, location: Hindi, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['name']
+2025-08-30 14:57:32,127 - INFO - Intent classified as Water Supply with confidence 0.36
+2025-08-30 14:57:32,139 - INFO - Extracted slots -> dept: Water Department, location: Sudama Nagar, severity: Low, name: Nikunj Maltare, date: 2025-08-30, complaint_id: None, missing: []
+2025-08-30 14:57:43,299 - INFO - Intent classified as Greetings with confidence 0.25
+2025-08-30 14:57:43,310 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: Swara, date: 2025-08-30, complaint_id: None, missing: ['location']
+2025-08-30 14:57:54,951 - INFO - Intent classified as Other with confidence 0.24
+2025-08-30 14:57:54,966 - INFO - Extracted slots -> dept: General, location: Hindi, severity: Low, name: Swara, date: 2025-08-30, complaint_id: None, missing: []
+2025-08-30 14:58:07,736 - INFO - Intent classified as Other with confidence 0.23
+2025-08-30 14:58:07,756 - INFO - Extracted slots -> dept: General, location: Bhawarkua, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['name']
+2025-08-30 14:58:08,022 - INFO - Zero-shot intent classifier loaded successfully.
+2025-08-30 14:58:15,440 - INFO - Summarizer model loaded successfully.
+2025-08-30 14:58:19,295 - INFO - Intent classified as Road with confidence 0.29
+2025-08-30 14:58:19,321 - INFO - Extracted slots -> dept: Public Works, location: None, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['location', 'name']
+2025-08-30 14:58:28,923 - INFO - Intent classified as Other with confidence 0.19
+2025-08-30 14:58:28,933 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['location', 'name']
+2025-08-30 14:58:42,721 - INFO - Intent classified as Other with confidence 0.17
+2025-08-30 14:58:42,764 - INFO - Extracted slots -> dept: General, location: None, severity: Low, name: None, date: 2025-08-30, complaint_id: None, missing: ['location', 'name']
