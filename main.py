@@ -836,7 +836,7 @@
 import os
 import asyncio
 from fastapi import FastAPI, HTTPException, Body
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import Optional, List, Dict, Any
 from threading import Thread
 from pymongo import MongoClient
@@ -863,29 +863,31 @@ translator = Translator()
 # ----------------------------
 # Request & Response Models
 # ----------------------------
+
+
 class TranscriptIn(BaseModel):
     transcript: str
-    asr_confidence: Optional[float] = Field(default=0.9)
-    meta: Optional[Dict[str, Any]] = Field(default=None)
+    asr_confidence: Optional[float] = 0.9
+    meta: Optional[Dict[str, Any]] = None
 
 class ComplaintOut(BaseModel):
-    id: Optional[str] = Field(default=None, alias="_id")
+    _id: Optional[str]
     department: str
     intent: str
     summary: str
     severity: str
-    location: Optional[str] = Field(default=None)
-    name: Optional[str] = Field(default=None)
-    date: Optional[str] = Field(default=None)
-    language: Optional[str] = Field(default=None)
-    confidence_score: Optional[float] = Field(default=None)
-    missing_fields: Optional[List[str]] = Field(default=None)
-    final_summary: Optional[str] = Field(default=None)
-    raw_transcript: Optional[str] = Field(default=None)
-    translated_text: Optional[str] = Field(default=None)
+    location: Optional[str]
+    name: Optional[str]
+    date: Optional[str]
+    language: Optional[str]
+    confidence_score: Optional[float]
+    missing_fields: Optional[List[str]]
+    final_summary: Optional[str]
+    raw_transcript: Optional[str]
+    translated_text: Optional[str]
     
     class Config:
-        populate_by_name = True
+        allow_population_by_field_name = True
 
 # ----------------------------
 # Core Processing Function
