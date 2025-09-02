@@ -836,7 +836,7 @@
 import os
 import asyncio
 from fastapi import FastAPI, HTTPException, Body
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional, List, Dict, Any
 from threading import Thread
 from pymongo import MongoClient
@@ -864,25 +864,29 @@ translator = Translator()
 # Request & Response Models
 # ----------------------------
 class TranscriptIn(BaseModel):
+    model_config = ConfigDict(extra='allow')
+    
     transcript: str
     asr_confidence: Optional[float] = 0.9
     meta: Optional[Dict[str, Any]] = None
 
 class ComplaintOut(BaseModel):
-    _id: Optional[str]
+    model_config = ConfigDict(extra='allow')
+    
+    id: Optional[str] = None
     department: str
     intent: str
     summary: str
     severity: str
-    location: Optional[str]
-    name: Optional[str]
-    date: Optional[str]
-    language: Optional[str]
-    confidence_score: Optional[float]
-    missing_fields: Optional[List[str]]
-    final_summary: Optional[str]
-    raw_transcript: Optional[str]
-    translated_text: Optional[str]
+    location: Optional[str] = None
+    name: Optional[str] = None
+    date: Optional[str] = None
+    language: Optional[str] = None
+    confidence_score: Optional[float] = None
+    missing_fields: Optional[List[str]] = None
+    final_summary: Optional[str] = None
+    raw_transcript: Optional[str] = None
+    translated_text: Optional[str] = None
 
 # ----------------------------
 # Core Processing Function

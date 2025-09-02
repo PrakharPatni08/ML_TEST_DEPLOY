@@ -10,12 +10,12 @@
 # requests==2.31.0
 # pydantic==1.10.9
 
-fastapi==0.95.2
-uvicorn[standard]==0.22.0
-pymongo==4.4.0
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pymongo==4.6.0
 langdetect==1.0.9
 python-dotenv==1.0.0
 requests==2.31.0
-pydantic==1.10.9
-rapidfuzz==3.1.1
+pydantic==2.5.0
+rapidfuzz==3.5.2
 # Removed heavy dependencies: transformers, torch, spacy
