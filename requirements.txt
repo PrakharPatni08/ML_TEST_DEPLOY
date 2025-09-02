@@ -1,7 +1,21 @@
+# fastapi==0.95.2
+# uvicorn[standard]==0.22.0
+# pymongo==4.4.0
+# langdetect==1.0.9
+# python-dotenv==1.0.0
+# transformers==4.30.0
+# torch==2.0.1
+# spacy==3.5.3
+# rapidfuzz==3.1.1
+# requests==2.31.0
+# pydantic==1.10.9
+
 fastapi==0.95.2
 uvicorn[standard]==0.22.0
 pymongo==4.4.0
 langdetect==1.0.9
 python-dotenv==1.0.0
-rapidfuzz==3.14.0
-# Remove heavy ML dependencies for now
+requests==2.31.0
+pydantic==1.10.9
+rapidfuzz==3.1.1
+# Removed heavy dependencies: transformers, torch, spacy
